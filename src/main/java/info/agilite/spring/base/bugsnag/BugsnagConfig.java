@@ -9,13 +9,11 @@ import com.bugsnag.Bugsnag;
 import com.bugsnag.BugsnagSpringConfiguration;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Configuration
 @Import(BugsnagSpringConfiguration.class)
-@FieldDefaults(makeFinal=true, level=AccessLevel.PRIVATE)
-@AllArgsConstructor(access=AccessLevel.PACKAGE)
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class BugsnagConfig {
 	@Value("${info.agilite.spring.base.crash-report-key:#{null}}")
 	String bugsnagKey;
